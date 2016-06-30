@@ -26,10 +26,10 @@
 	<div class="container">
 		<div class="row">
 			<div class="col sm 6">
-				Datos del avión
+				<h2>Datos del avión</h2>
 			</div>
 			<div class="col sm 6">
-				Campo sin datos
+				<h2>*******</h2>
 			</div>
 		</div>
 		<div class="row">
@@ -93,6 +93,8 @@
 			a.setAttribute("class","desocupado asiento");
 		};
 
+		a.setAttribute("Onclick", "cambiarBack(this)")
+
 		if(cajaPeq.children.length >= 2) {
 			avionContainer.appendChild(cajaPeq);
 			cajaPeq = document.createElement("div");
@@ -106,6 +108,14 @@
 			avionContainer.appendChild(cajaPeq);
 		}
 	};
+
+	function cambiarBack(elemento){
+	if(elemento.getAttribute("class") == "ocupado asiento"){
+		elemento.setAttribute("class","desocupado asiento");
+	}else{
+		elemento.setAttribute("class","ocupado asiento");
+	}
+}
 
 	</script>
 </body>
